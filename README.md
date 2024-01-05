@@ -5,23 +5,23 @@ It's an excel sheet that is a calendar that allows you to put in recurring event
 
 # How to Use
 
-The Date column should be formated as follows: 
+- To to the "Schedule" Tab
+- Scroll to the bottom of the table, and find an empty row
+- Enter the day in the first column
+- Enter the month in the second column
+- Enter the year in the third column
+- Enter the name of the event in the fourth column
+- For the fifth column, find the drop down menu in the bottom left corner of the cell, and select your option
+ - Or, you can simply type "Birthday", "Anniversary", "Memorial", "Holiday", or "Floating Holiday"
 
-```
-=DATE(CalendarYear,M,D)
-```
+And that's it! The event should now be on the calendar automatically.
 
-Where M is the Month and D is the Day the event takes place. Don't change 'CalendarYear'; instead, put the year the event started in the Year column on the right.
+# Where is Mardi Gras/Ash Wednesday/Good Friday/Easter?
 
-The Event column gives you a preview of what the event will look like in the calendar. This is what the code looks like for a Birthday event
+The way the date of Easter is calculated is ... complicated. The very basic explanation is that the church wants Easter to line up with the Jewish holiday Passover. Passover is calculated using the Hebrew calendar, which is lunar. The Gregorian Calendar, the one that most of modern society uses, is a solar calendar. 
+So the math for calculating the date of Easter is very complicated. And since Good Friday, Ash Wednesday, and Mardi Gras all use Easter for their date calculation, they also aren’t on the calendar.
+This is something I'd like to get correctly, but just don't have the time for right now.
 
-```
-=TEXTJOIN("",FALSE,C3,"'s ",CalendarYear - D3,IF(RIGHT(CalendarYear - D3,1)="1","st",IF(RIGHT(CalendarYear - D3,1)="2","nd",IF(RIGHT(CalendarYear - D3,1)="3","rd","th")))," Birthday")
-```
-
-The Name column is the name of the event. For Birthdays, this column would simply contain the name of the person whose birthday it is.
-
-The Year column is the year this event started. For Birthdays, it would be the year the person was born. This is used to calculate their age.
 
 # References
 
